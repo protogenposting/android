@@ -566,4 +566,8 @@
     <string name="status_text_placeholder">به دنیا بگویید که در چه حالی هستید</string>
     <string name="status_text_error_too_long">متن وضعیت خیلی طولانی است. سعی کنید آن را کمتر از %1$d کارکتر نگه دارید.</string>
     <string name="status_text_error_other">هنگام به‌روزرسانی متن وضعیت شما خطایی روی داد. لطفاً بعداً دوباره امتحان کنید.</string>
+    <string name="could_not_log_in_heading">مشکلی در ورود به حساب شما پیش آمد</string>
+    <string name="could_not_log_in_body">ممکن است از دستگاه دیگری خارج شده باشید یا اتصال اینترنت شما قطع شده باشد.</string>
+    <string name="could_not_log_in_cta_try_again">دوباره تلاش کنید</string>
+    <string name="could_not_log_in_cta_logout">خروج از سیستم</string>
 </resources>
