@@ -33,7 +33,6 @@ import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.websocket.WebSockets
 import io.ktor.client.request.header
 import io.ktor.serialization.kotlinx.json.json
-import io.sentry.Sentry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -204,7 +203,7 @@ object RevoltAPI {
                             }
                             RealtimeSocket.updateDisconnectionState(DisconnectionState.Disconnected)
                         } catch (e: Exception) {
-                            Sentry.captureMessage("Error in socket error handling: $e")
+
                         }
                     }
                 }
@@ -217,7 +216,7 @@ object RevoltAPI {
                     }
                     RealtimeSocket.updateDisconnectionState(DisconnectionState.Disconnected)
                 } catch (e: Exception) {
-                    Sentry.captureMessage("Error in socket error handling: $e")
+
                 }
             }
         }
@@ -296,7 +295,7 @@ object RevoltAPI {
         if (!openForLocalHydration) {
             Log.w("RevoltAPI", "Hydration is closed, but was called")
             // Stale data is worst case, let's track it even in prod
-            Sentry.captureMessage("Local hydration called twice or after real data was fetched")
+
             return
         }
 

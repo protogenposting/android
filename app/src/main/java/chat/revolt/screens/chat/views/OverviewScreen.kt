@@ -60,7 +60,6 @@ import chat.revolt.components.screens.settings.UserOverview
 import chat.revolt.components.skeletons.UserOverviewSkeleton
 import chat.revolt.internals.extensions.zero
 import chat.revolt.sheets.UserCardSheet
-import io.sentry.Sentry
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,7 +81,6 @@ fun OverviewScreen(navController: NavController, useDrawer: Boolean, onDrawerCli
                 }
             } catch (e: Exception) {
                 Log.e("OverviewScreen", "Failed to fetch self", e)
-                Sentry.captureException(e)
                 isLoading = false
             }
         }

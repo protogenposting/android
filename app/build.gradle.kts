@@ -1,5 +1,4 @@
 import com.mikepenz.aboutlibraries.plugin.StrictMode
-import io.sentry.android.gradle.instrumentation.logcat.LogcatLevel
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -12,11 +11,9 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     id("org.jmailen.kotlinter")
-    id("io.sentry.android.gradle") version "4.12.0"
     id("app.cash.sqldelight") version "2.0.1"
     id("kotlin-kapt")
     id("kotlin-parcelize")
-    id("com.google.gms.google-services")
 }
 
 val composeBomVersion = "2024.10.01"
@@ -168,20 +165,6 @@ android {
     }
 }
 
-sentry {
-    autoUploadProguardMapping =
-        buildproperty("sentry.upload_mappings", "RVX_SENTRY_UPLOAD_MAPPINGS") == "true"
-
-    tracingInstrumentation {
-        enabled = true
-
-        logcat {
-            enabled = true
-            minLevel = LogcatLevel.WARNING
-        }
-    }
-}
-
 dependencies {
     // Android/Kotlin Core
     implementation("androidx.core:core-ktx:1.15.0")
@@ -241,10 +224,6 @@ dependencies {
 
     // AboutLibraries - automated OSS library attribution
     implementation("com.mikepenz:aboutlibraries-core:11.3.0-rc02")
-
-    // Sentry - crash reporting
-    implementation("io.sentry:sentry-android:7.16.0")
-    implementation("io.sentry:sentry-compose-android:7.16.0")
 
     // Other AndroidX libraries - used for various things and never seem to have a consistent version
     implementation("androidx.documentfile:documentfile:1.0.1")
