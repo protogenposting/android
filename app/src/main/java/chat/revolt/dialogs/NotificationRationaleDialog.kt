@@ -71,7 +71,7 @@ fun NotificationRationaleDialog(
         },
         confirmButton = {
             Button(onClick = {
-                onSelected(true)
+                onSelected(false)
                 onDismiss()
             }) {
                 Text(stringResource(id = R.string.spark_notifications_rationale_cta))
