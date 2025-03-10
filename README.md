@@ -1,6 +1,6 @@
-# Revolt on Android
+This is just a really simple de-googling of revolt, meaning you dont need google play installed to use it.
 
-## Description
+## Original Description
 
 This is the official Android app for the [Revolt](https://revolt.chat) chat platform.  
 The codebase includes the app itself, as well as an internal library for interacting with the Revolt
